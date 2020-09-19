@@ -2,9 +2,10 @@ import React from 'react';
 
 import { animeList } from './animes';
 import { v4 as uuidv4 } from 'uuid';
-import { Link } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 
 import slugify from 'slugify';
+import { AnimePage } from './AnimePage';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -12,7 +13,14 @@ export default class App extends React.Component {
 
     this.state = {
       animes: animeList().map((anime) => {
-        return { title: anime, id: uuidv4() };
+        return {
+          title: anime,
+          id: uuidv4(),
+          url: `/${slugify(anime, {
+            lower: true,
+            strict: true,
+          })}`,
+        };
       }),
     };
   }
@@ -152,26 +160,29 @@ export default class App extends React.Component {
               ></input>
             </form>
             <div className="flex flex-col w-full">
-              {this.state.animes.map((anime) => {
-                const link = slugify(anime.title, {
-                  lower: true,
-                  strict: true,
-                });
-                console.log(link);
-                return (
-                  <Link
-                    key={anime.id}
-                    className="border-b border-twistorange-800 p-3"
-                  >
-                    <span className="text-gray-300 font-body hover:text-gray-100">
-                      {anime.title}
-                    </span>
-                  </Link>
-                );
-              })}
+              {this.state.animes.map((anime) => (
+                <Link
+                  to={anime.url}
+                  key={anime.id}
+                  className="border-b border-twistorange-800 p-3"
+                >
+                  <span className="text-gray-300 font-body hover:text-gray-100">
+                    {anime.title}
+                  </span>
+                </Link>
+              ))}
             </div>
           </div>
         </div>
+        <Switch>
+          {this.state.animes.map((anime) => (
+            <Route
+              exact
+              path={anime.url}
+              render={() => <AnimePage title={anime.title} />}
+            ></Route>
+          ))}
+        </Switch>
       </div>
     );
   }
