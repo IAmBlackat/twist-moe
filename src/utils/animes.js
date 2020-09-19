@@ -1,3 +1,6 @@
+import { v4 as uuidv4 } from 'uuid';
+import slugify from 'slugify';
+
 export const animeList = () => {
   return [
     'Inu x Boku SS',
@@ -2202,5 +2205,14 @@ export const animeList = () => {
     'Hope: Suiso Shakai to, Korekara no Energy no Hanashi',
     'Cencoroll',
     'Zettai Karen Children',
-  ];
+  ].map((anime) => {
+    return {
+      title: anime,
+      id: uuidv4(),
+      url: `/${slugify(anime, {
+        lower: true,
+        strict: true,
+      })}`,
+    };
+  });
 };
