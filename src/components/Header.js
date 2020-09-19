@@ -1,19 +1,24 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 export const Header = () => {
   return (
     <div className="relative py-5">
       <div className="w-16 h-16 m-auto mt-4">
-        <svg viewBox="0 0 16 10">
-          <polygon
-            points="0,10 5,0 10,10 9,10 5,2 1,10"
-            fill="#cdcece"
-          ></polygon>
-          <polygon
-            points="11,10 6,0 16,0 15.5,1 7.5,1 11.5,9"
-            fill="#FDCB67"
-          ></polygon>
-        </svg>
+        <Link to="/">
+          {' '}
+          <svg viewBox="0 0 16 10">
+            <polygon
+              points="0,10 5,0 10,10 9,10 5,2 1,10"
+              fill="#cdcece"
+            ></polygon>
+            <polygon
+              points="11,10 6,0 16,0 15.5,1 7.5,1 11.5,9"
+              fill="#FDCB67"
+            ></polygon>
+          </svg>
+        </Link>
       </div>
       <div className="absolute right-0 inset-y-0 flex items-center px-4">
         <button className="focus:outline-none cursor-default bg-twistorange-800 w-10 h-10 rounded mr-2 border border-transparent transition duration-500 ease-in-out hover:border-twistorange-gray">
