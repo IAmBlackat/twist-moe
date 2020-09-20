@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactPlayer from 'react-player';
 import { Donate } from '../components/Donate';
 import { Footer } from '../components/Footer';
 
@@ -25,7 +26,10 @@ export default class AnimePage extends React.Component {
         <div className="flex flex-col flex-1">
           <div className="flex flex-col mx-auto w-2/6">
             <div className="flex w-full" style={{ height: '336px' }}>
-              <VideoPlayer source="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" />
+              <ReactPlayer
+                playing={true}
+                url="https://www9.mp4upload.com:282/d/rsx5f2byz3b4quuom6xe2maqddgomfdoax7ulikpaolhiiggyhruzuhw/video.mp4"
+              />
             </div>
             <div className="flex flex-col pb-4 mb-2 mt-5 border-b border-t border-twistorange-800">
               <span className="font-body text-2xl text-twistorange-white">

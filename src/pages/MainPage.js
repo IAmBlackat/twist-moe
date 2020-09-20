@@ -55,6 +55,11 @@ export default class MainPage extends React.Component {
                   </span>{' '}
                   in English
                 </span>
+                <button className="mx-auto mt-2 focus:outline-none cursor-default bg-twistorange-800 px-4 h-10 self-start rounded border border-transparent transition duration-500 ease-in-out hover:border-twistorange-gray">
+                  <span className="font-body text-gray-300">
+                    Try Japanese titles
+                  </span>
+                </button>
               </div>
             )}
             <Footer />
