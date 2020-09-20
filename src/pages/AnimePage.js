@@ -4,7 +4,6 @@ import { Donate } from '../components/Donate';
 import { Footer } from '../components/Footer';
 
 import { Header } from '../components/Header';
-import VideoPlayer from '../components/VideoPlayer';
 
 export default class AnimePage extends React.Component {
   constructor(props) {
@@ -25,10 +24,13 @@ export default class AnimePage extends React.Component {
         <Header />
         <div className="flex flex-col flex-1">
           <div className="flex flex-col mx-auto w-2/6">
-            <div className="flex w-full" style={{ height: '336px' }}>
+            <div className="flex-none bg-black mb-3">
               <ReactPlayer
-                playing={true}
-                url="https://www9.mp4upload.com:282/d/rsx5f2byz3b4quuom6xe2maqddgomfdoax7ulikpaolhiiggyhruzuhw/video.mp4"
+                width="w-full"
+                style={{ height: '100%' }}
+                playing
+                controls
+                url="https://twistcdn.bunny.sh/anime/toarukagakunorailgunt/[HorribleSubs]%20Toaru%20Kagaku%20no%20Railgun%20T%20-%2001%20[1080p].mp4"
               />
             </div>
             <div className="flex flex-col pb-4 mb-2 mt-5 border-b border-t border-twistorange-800">
