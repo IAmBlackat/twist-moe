@@ -1,5 +1,6 @@
 import React from 'react';
 import { Donate } from '../components/Donate';
+import { Footer } from '../components/Footer';
 
 import { Header } from '../components/Header';
 import VideoPlayer from '../components/VideoPlayer';
@@ -46,7 +47,11 @@ export default class AnimePage extends React.Component {
                 {this.props.episodes.map((episode) => (
                   <button
                     onClick={() => this.selectEpisode(episode)}
-                    className="mr-2 mb-2 focus:outline-none cursor-default flex w-16 py-1 bg-twistorange-800 rounded border border-transparent transition duration-500 ease-in-out hover:border-twistorange-gray"
+                    className={`mr-2 mb-2 focus:outline-none cursor-default flex w-16 py-1 bg-twistorange-800 rounded border ${
+                      episode === this.state.currentEpisode
+                        ? 'border-twistorange-gray'
+                        : 'border-transparent'
+                    } transition duration-500 ease-in-out hover:border-twistorange-gray`}
                   >
                     <span className="m-auto text-twistorange-white">
                       {episode === this.state.currentEpisode ? (
@@ -68,6 +73,7 @@ export default class AnimePage extends React.Component {
               </div>
             </div>
             <Donate />
+            <Footer />
           </div>
         </div>
       </div>

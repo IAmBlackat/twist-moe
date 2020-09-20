@@ -11,6 +11,7 @@ export const App = () => {
       <Route exact path="/" component={MainPage} />
       {animeList().map((anime) => (
         <Route
+          key={anime.id}
           exact
           path={anime.url}
           render={() => (
