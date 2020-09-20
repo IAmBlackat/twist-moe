@@ -37,7 +37,10 @@ export default class MainPage extends React.Component {
         <Header />
         <div className="flex flex-col flex-1">
           <Announcement />
-          <div className="flex flex-col mx-auto w-2/6 py-2">
+          <div
+            className="flex flex-col mx-auto py-2"
+            style={{ width: '600px' }}
+          >
             <Donate />
             <AnimeSearchBar
               filterAnime={this.filterAnime}

@@ -3,7 +3,7 @@ import React from 'react';
 export const Announcement = () => {
   return (
     <div className="flex flex-row justify-center bg-twistorange-700">
-      <div className="w-2/6 py-3 relative">
+      <div className="py-3 relative" style={{ width: '600px' }}>
         <p className="flex flex-col mr-12 text-gray-300">
           <u>
             <b className="font-body">
