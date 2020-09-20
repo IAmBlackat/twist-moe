@@ -20748,6 +20748,7 @@ video {
 
 .main-content::-webkit-scrollbar {
   width: 8px;
+  padding: 0.5rem;
 }
 
 /* Track */
