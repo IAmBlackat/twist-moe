@@ -15,7 +15,12 @@ export default class VideoPlayer extends React.Component {
 
   render() {
     return (
-      <video width="w-full" height="h-auto" autoPlay>
+      <video
+        height="h-auto"
+        autoPlay
+        controls
+        className="flex-none g-black w-full focus:outline-none"
+      >
         <source
           src={this.props.source}
           type={`video/${this.state.format.substr(
