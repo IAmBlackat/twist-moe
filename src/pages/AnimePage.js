@@ -24,13 +24,13 @@ export default class AnimePage extends React.Component {
         <Header />
         <div className="flex flex-col flex-1">
           <div className="flex flex-col mx-auto w-2/6">
-            <div className="flex-none bg-black mb-3">
+            <div className="flex-none focus:outline-none">
               <ReactPlayer
                 width="w-full"
                 style={{ height: '100%' }}
                 playing
                 controls
-                url="https://twistcdn.bunny.sh/anime/toarukagakunorailgunt/[HorribleSubs]%20Toaru%20Kagaku%20no%20Railgun%20T%20-%2001%20[1080p].mp4"
+                url="https://storage.googleapis.com/bmvbv/aaa/22a_1600599208145657.mp4"
               />
             </div>
             <div className="flex flex-col pb-4 mb-2 mt-5 border-b border-t border-twistorange-800">
