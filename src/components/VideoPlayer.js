@@ -11,6 +11,7 @@ export default class VideoPlayer extends React.Component {
     this.state = {
       isPlaying: false,
       isFullscreen: false,
+      duration: '',
     };
   }
 
@@ -20,22 +21,31 @@ export default class VideoPlayer extends React.Component {
 
   toggleFullscreen = () => {
     screenfull.request(findDOMNode(this.refs.player));
-
     this.setState((currState) => ({ isFullscreen: !currState.isFullscreen }));
+  };
+
+  formatDuration = (seconds) => {
+    const minutes = Math.floor(seconds / 60);
+    return `${minutes}:${(seconds - minutes * 60).toFixed(0)}`;
   };
 
   render() {
     return (
-      <div className="relative flex">
-        <div className="z-0" ref="player">
-          <ReactPlayer
-            width="w-full"
-            style={{ height: '100%', outline: 'none' }}
-            playing={this.state.isPlaying}
-            url={this.props.src}
-          />
-        </div>
-        <div className="flex items-center absolute z-10 bottom-0 left-0 mb-3 h-10 px-2 w-full">
+      <div
+        className={`${
+          this.state.isFullscreen ? '' : 'relative'
+        } flex w-auto h-auto`}
+      >
+        <ReactPlayer
+          onDuration={(duration) => {
+            this.setState({ duration: this.formatDuration(duration) });
+            console.log(duration);
+          }}
+          ref="player"
+          playing={this.state.isPlaying}
+          url={this.props.src}
+        />
+        <div className="flex text-white z-10 items-center absolute z-10 bottom-0 left-0 mb-3 h-10 px-2 w-full">
           <button onClick={this.togglePlay} className="focus:outline-none flex">
             <div className="w-6 h-6">
               {this.state.isPlaying ? (
@@ -63,7 +73,9 @@ export default class VideoPlayer extends React.Component {
               }}
             ></div>
           </div>
-          <span className=" text-twistorange-white font-body ml-1">00:01</span>
+          <span className=" text-twistorange-white font-body ml-1">
+            {this.state.duration}
+          </span>
           <div
             className="w-24 rounded-full my-2 bg-twistorange-gray"
             style={{ height: '4px' }}
