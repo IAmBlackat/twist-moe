@@ -80,7 +80,7 @@ export default class VideoPlayer extends React.Component {
           playing={this.state.isPlaying}
           url={this.props.src}
         />
-        <div className="flex flex-col-reverse flex-1 absolute h-full w-full opacity-0 hover:opacity-100">
+        <div className="flex flex-col-reverse flex-1 absolute h-full w-full opacity-0 transition duration-500 ease-in-out  hover:opacity-100">
           <div
             className="flex text-white items-center h-10 px-2 w-full"
             style={{
