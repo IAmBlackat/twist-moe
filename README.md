@@ -7,10 +7,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Screenshots
 
-[![first](https://i.imgur.com/G2aMyDg.png)]
-[![second](https://i.imgur.com/QsjKK3n.png)]
-[![third](https://i.imgur.com/21XfOVD.png)]
-[![fourth](https://i.imgur.com/nlAdzN1.png)]
+![first](https://i.imgur.com/G2aMyDg.png)
+![second](https://i.imgur.com/QsjKK3n.png)
+![third](https://i.imgur.com/21XfOVD.png)
+![fourth](https://i.imgur.com/nlAdzN1.png)
 
 ## Videos
 
