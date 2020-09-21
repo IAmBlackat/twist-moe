@@ -25,7 +25,7 @@ export default class AnimePage extends React.Component {
         <Header />
         <div className="flex flex-col flex-1">
           <div className="flex flex-col mx-auto" style={{ width: '600px' }}>
-            <VideoPlayer src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" />
+            <VideoPlayer src="https://storage.googleapis.com/fasdsg/8ER394X2WTFQ/23a_1600584785_145569.mp4" />
 
             <div className="flex flex-col pb-4 mb-2 mt-3 border-b border-t border-twistorange-800">
               <span className="font-body text-2xl text-twistorange-white">
