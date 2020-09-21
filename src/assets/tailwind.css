@@ -246,3 +246,23 @@ input[type='range']::-ms-fill-upper {
 input[type='range']:focus::-ms-fill-upper {
   background: #367ebd;
 }
+:-webkit-full-screen #controls {
+  color: white;
+  position: absolute;
+  bottom: 0;
+}
+
+:fullscreen #controls {
+  color: white;
+  position: absolute;
+}
+
+:-webkit-full-screen video {
+  width: 100%;
+  height: 100%;
+}
+
+:fullscreen video {
+  width: 100%;
+  height: 100%;
+}

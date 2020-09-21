@@ -23,7 +23,7 @@ export default class VideoPlayer extends React.Component {
   };
 
   toggleFullscreen = () => {
-    screenfull.request(findDOMNode(this.player));
+    screenfull.request(findDOMNode(this.container));
     this.setState((currState) => ({ isFullscreen: !currState.isFullscreen }));
   };
 
@@ -66,7 +66,11 @@ export default class VideoPlayer extends React.Component {
 
   render() {
     return (
-      <div className={`flex flex-1 relative h-auto w-full`}>
+      <div
+        ref="container"
+        id="container"
+        className={`flex flex-1 relative h-auto w-full`}
+      >
         <ReactPlayer
           ref={this.ref}
           height="h-full"
@@ -78,7 +82,10 @@ export default class VideoPlayer extends React.Component {
           playing={this.state.isPlaying}
           url={this.props.src}
         />
-        <div className="flex flex-col-reverse flex-1 absolute h-full w-full opacity-0 transition duration-500 ease-in-out hover:opacity-100">
+        <div
+          id="controls"
+          className="flex flex-col-reverse flex-1 absolute h-full w-full opacity-0 transition duration-500 ease-in-out hover:opacity-100"
+        >
           <div
             className="flex text-white items-center h-10 px-2 w-full"
             style={{

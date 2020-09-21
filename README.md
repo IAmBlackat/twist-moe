@@ -1,4 +1,21 @@
+This project is only aimed to practice what I learn in React so far (10 days in from when I started learning React, CSS & HTML), to copy and give the feel of the popular anime streaming web site https://twist.moe/
+
+This project uses TailwindCSS and expects a fair knowledge of things, as of now I release this project for people to learn from my mistakes.
+If I would to re-create this project again I'd do alot of things differntly this time, So do learn from my mistakes.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Screenshots
+
+[![first](https://i.imgur.com/G2aMyDg.png)]
+[![second](https://i.imgur.com/QsjKK3n.png)]
+[![third](https://i.imgur.com/21XfOVD.png)]
+[![fourth](https://i.imgur.com/nlAdzN1.png)]
+
+## Videos
+
+https://i.gyazo.com/50781c3b6cf1907b4ad7d6ed55fd31ae.mp4
+https://i.gyazo.com/044e2036e33285b694c1e67888ff2e0f.mp4
 
 ## Available Scripts
 
