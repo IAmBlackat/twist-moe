@@ -27,13 +27,11 @@ export default class VideoPlayer extends React.Component {
     this.setState((currState) => ({ isFullscreen: !currState.isFullscreen }));
   };
 
-  formatDuration = (seconds) => {
-    const minutes = Math.floor(seconds / 60);
+  formatDuration = (value) => {
+    const minutes = Math.floor(value / 60);
     const correctedMinutes = minutes <= 9 ? `0${minutes}` : `${minutes}`;
-    const correctedSeconds =
-      (seconds - minutes * 60).toFixed(0) <= 9
-        ? `0${(seconds - minutes * 60).toFixed(0)}`
-        : `${(seconds - minutes * 60).toFixed(0)}`;
+    const seconds = (value - minutes * 60).toFixed(0);
+    const correctedSeconds = seconds <= 9 ? `0${seconds}` : `${seconds}`;
     return `${correctedMinutes}:${correctedSeconds}`;
   };
 
@@ -109,11 +107,11 @@ export default class VideoPlayer extends React.Component {
                 )}
               </div>
             </button>
-            <span className=" text-twistorange-white font-body ml-1">
+            <span className="text-twistorange-white font-body">
               {this.formatDuration(this.state.playedSeconds)}
             </span>
             <input
-              className="w-full"
+              className="w-full rounded-full focus:outline-none ml-1"
               type="range"
               min={0}
               max={0.999999}
@@ -126,17 +124,13 @@ export default class VideoPlayer extends React.Component {
             <span className=" text-twistorange-white font-body ml-1">
               {this.formatDuration(this.state.duration)}
             </span>
-            <div
-              className="w-24 rounded-full my-2 bg-twistorange-gray"
-              style={{ height: '4px' }}
-            >
-              <div
-                className="h-full rounded-full bg-twistorange-red"
-                style={{
-                  width: '9.724%',
-                }}
-              ></div>
-            </div>
+            <input
+              className="w-24 rounded-full focus:outline-none mx-1"
+              type="range"
+              min={0}
+              max={0.999999}
+              step="any"
+            />
             <button
               onClick={this.toggleFullscreen}
               className="focus:outline-none flex"
